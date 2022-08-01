@@ -40,13 +40,13 @@ print('Resizing... \n\n')
 
 
 
-for img in images:
-   dirName = 'original_images'
-
-   if not os.path.exists(dirName):
+dirName = 'original_images'
+if not os.path.exists(dirName):
       os.mkdir(dirName)
 
-   shutil.copyfile(img, f'original_images/{ img }')
+      
+for img in images:
+   shutil.copyfile(img, f'{ dirname }/{ img }')
 
    read_img = cv2.imread(img)
    res_img = cv2.resize(read_img, (0, 0), fx = x, fy = y, interpolation = cv2.INTER_CUBIC)
